@@ -33,7 +33,11 @@ setup(name='cisindia.theme',
           'collective.dexteritytextindexer',
           'plone.app.multilingual',
           'plone.multilingualbehavior',
-          'z3c.jbot'
+          'z3c.jbot',
+          'Products.ContentWellPortlets',
+          'collective.portlet.collectionmultiview',
+          'fourdigits.portlet.twitter',
+          'cisindia.multiviews',
           # -*- Extra requirements: -*-
       ],
       extras_require={

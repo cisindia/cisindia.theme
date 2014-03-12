@@ -3,5 +3,9 @@
     <version>1000</version>
     <dependencies>
         <dependency>profile-plone.app.theming:default</dependency>
+        <dependency>profile-collective.portlet.collectionmultiview:default</dependency>
+        <dependency>profile-Products.ContentWellPortlets:default</dependency>
+        <dependency>profile-fourdigits.portlet.twitter:default</dependency>
+        <dependency>profile-cisindia.multiviews:default</dependency>
     </dependencies>
 </metadata>
