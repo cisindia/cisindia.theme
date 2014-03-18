@@ -1,0 +1,438 @@
+@import "bootstrap.css";
+
+@import "bootstrap-responsive.css";
+.nav,
+.footer-nav {
+  background: #FBFBFB;
+  border-top: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB;
+}
+.nav ul,
+.footer-nav ul {
+  list-style: none;
+  margin: 0;
+}
+.nav ul li,
+.footer-nav ul li {
+  list-style: none;
+  float: left;
+  line-height: 0px;
+}
+.nav ul li a,
+.footer-nav ul li a {
+  font-size: 18px;
+  padding: 15px 0px 10px 2px;
+  margin-right: 20px;
+  line-height: 50px;
+  color: #9A9A9A;
+  text-decoration: none;
+}
+.nav ul li a:hover,
+.footer-nav ul li a:hover {
+  color: #333333;
+}
+.sub-nav ul {
+  list-style: none;
+  margin: 0;
+}
+.sub-nav ul li {
+  list-style: none;
+  float: left;
+  line-height: 0px;
+}
+.sub-nav ul li a {
+  font-size: 16px;
+  padding: 10px 20px 10px 2px;
+  line-height: 32px;
+  color: #A6A6A6;
+  text-decoration: none;
+}
+.sub-nav ul li a:hover {
+  color: #7a7a7a;
+}
+.main {
+  margin-top: 20px;
+}
+.featured {
+  padding: 10px 20px 10px 10px;
+  border: 1px solid #C0C0C0;
+  background: #fbfbfb;
+  margin-bottom: 40px;
+}
+.featured h2 {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+.featured h2 a {
+  color: #333;
+}
+.featured img {
+  float: left;
+  padding-right: 10px;
+}
+.featured p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.home .featured h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+.home .featured h1 a {
+  color: #333;
+}
+.homeBlock {
+  margin-bottom: 50px;
+}
+.pageHeader {
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+.pageHeader h1 {
+  font-size: 52px;
+  font-weight: 900;
+}
+.sectionIntro {
+  font-size: 18px;
+  line-height: 26px;
+}
+.date,
+.eventMeta {
+  font-size: 14px;
+  margin: 0;
+  color: #777;
+}
+.readmore {
+  font-size: 16px;
+}
+.keyResearch {
+  margin-top: 30px;
+}
+.keyResearch h2 {
+  font-size: 32px;
+  line-height: 32px;
+}
+.keyResearch h3 {
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 0;
+}
+.keyResearch ol {
+  margin-bottom: 20px;
+}
+.keyResearch ol li {
+  font-size: 16px;
+}
+p.author {
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+.articleItem {
+  margin-bottom: 40px;
+}
+.articleItem h2 {
+  font-size: 28px;
+  line-height: 32px;
+  color: #333;
+  font-weight: 700;
+  margin: 0;
+}
+.articleItem h2 a {
+  color: #333;
+}
+.articleItem h2 a:hover {
+  color: #333;
+}
+.articleItem p.author {
+  font-size: 16px;
+}
+.articleItem p {
+  font-size: 16px;
+  padding-right: 20px;
+}
+ul.articleMeta {
+  margin: 0;
+  border-top: 1px solid #ebebeb;
+  padding-top: 5px;
+}
+ul.articleMeta li {
+  font-size: 16px;
+}
+ul.articleMeta li.date {
+  padding-left: 20px;
+  background: transparent url(../images/icon_date.gif) no-repeat 0 2px;
+}
+ul.articleMeta li.tags {
+  padding-left: 20px;
+  background: transparent url(../images/icon_tags.gif) no-repeat 0 2px;
+}
+ul.articleMeta li.location {
+  padding-left: 20px;
+  background: transparent url(../images/icon_location.gif) no-repeat 0 2px;
+}
+.content.article p.articleIntro {
+  font-size: 28px;
+  line-height: 36px;
+}
+.content.article p {
+  font-size: 18px;
+  line-height: 26px;
+}
+.content.article p.callout {
+  border-left: 3px solid #ebebeb;
+  padding: 0 60px 0 10px;
+  margin: 15px 0 15px 0px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+}
+.content.article .comments {
+  margin-top: 20px;
+}
+.content.article .comments .comment {
+  margin-top: 10px;
+  overflow: hidden;
+}
+.content.article .comments .comment h6 {
+  font-weight: 400;
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+.content.article .comments .comment p.date {
+  font-size: 14px;
+}
+.content.article .comments .comment p {
+  font-size: 16px;
+}
+.articleTools {
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  overflow: hidden;
+  padding: 15px 0 10px;
+}
+.access-block {
+  border-top: 3px solid #56ba5d;
+}
+.access-section .nav {
+  border-bottom: 1px solid #56ba5d;
+}
+.access-section .access-nav a {
+  border-bottom: 5px solid #56ba5d;
+  color: #56ba5d;
+}
+.access-section .access-nav a:hover {
+  color: #56ba5d;
+}
+.access-section .current-sub a {
+  color: #56ba5d;
+}
+.access-section .current-sub a:hover {
+  color: #56ba5d;
+}
+.access-section .keyResearch {
+  border-top: 3px solid #56ba5d;
+}
+.access-section .sidebarBlock {
+  border-top: 2px solid #56ba5d;
+}
+.a2k-block {
+  border-top: 3px solid #1594ac;
+}
+.a2k-section .nav {
+  border-bottom: 1px solid #1594ac;
+}
+.a2k-section .a2k-nav a {
+  border-bottom: 5px solid #1594ac;
+  color: #1594ac;
+}
+.a2k-section .a2k-nav a:hover {
+  color: #1594ac;
+}
+.a2k-section .current-sub a {
+  color: #1594ac;
+}
+.a2k-section .current-sub a:hover {
+  color: #1594ac;
+}
+.a2k-section .keyResearch {
+  border-top: 3px solid #1594ac;
+}
+.a2k-section .sidebarBlock {
+  border-top: 2px solid #1594ac;
+}
+.ig-block {
+  border-top: 3px solid #e375e9;
+}
+.ig-section .nav {
+  border-bottom: 1px solid #e375e9;
+}
+.ig-section .ig-nav a {
+  border-bottom: 5px solid #e375e9;
+  color: #e375e9;
+}
+.ig-section .ig-nav a:hover {
+  color: #e375e9;
+}
+.ig-section .current-sub a {
+  color: #e375e9;
+}
+.ig-section .current-sub a:hover {
+  color: #e375e9;
+}
+.ig-section .keyResearch {
+  border-top: 3px solid #e375e9;
+}
+.ig-section .sidebarBlock {
+  border-top: 2px solid #e375e9;
+}
+.open-block {
+  border-top: 3px solid #ff3333;
+}
+.open-section .nav {
+  border-bottom: 1px solid #ff3333;
+}
+.open-section .open-nav a {
+  border-bottom: 5px solid #ff3333;
+  color: #ff3333;
+}
+.open-section .open-nav a:hover {
+  color: #ff3333;
+}
+.open-section .current-sub a {
+  color: #ff3333;
+}
+.open-section .current-sub a:hover {
+  color: #ff3333;
+}
+.open-section .keyResearch {
+  border-top: 3px solid #ff3333;
+}
+.open-section .sidebarBlock {
+  border-top: 2px solid #ff3333;
+}
+.telecom-block {
+  border-top: 3px solid #eba13a;
+}
+.telecom-section .nav {
+  border-bottom: 1px solid #eba13a;
+}
+.telecom-section .telecom-nav a {
+  border-bottom: 5px solid #eba13a;
+  color: #eba13a;
+}
+.telecom-section .telecom-nav a:hover {
+  color: #eba13a;
+}
+.telecom-section .current-sub a {
+  color: #eba13a;
+}
+.telecom-section .current-sub a:hover {
+  color: #eba13a;
+}
+.telecom-section .keyResearch {
+  border-top: 3px solid #eba13a;
+}
+.telecom-section .sidebarBlock {
+  border-top: 2px solid #eba13a;
+}
+.natives-block {
+  border-top: 3px solid #aa86e4;
+}
+.natives-section .nav {
+  border-bottom: 1px solid #aa86e4;
+}
+.natives-section .natives-nav a {
+  border-bottom: 5px solid #aa86e4;
+  color: #aa86e4;
+}
+.natives-section .natives-nav a:hover {
+  color: #aa86e4;
+}
+.natives-section .current-sub a {
+  color: #aa86e4;
+}
+.natives-section .current-sub a:hover {
+  color: #aa86e4;
+}
+.natives-section .keyResearch {
+  border-top: 3px solid #aa86e4;
+}
+.natives-section .sidebarBlock {
+  border-top: 2px solid #aa86e4;
+}
+.raw-block {
+  border-top: 3px solid #e95c78;
+}
+.raw-section .nav {
+  border-bottom: 1px solid #e95c78;
+}
+.raw-section .raw-nav a {
+  border-bottom: 5px solid #e95c78;
+  color: #e95c78;
+}
+.raw-section .raw-nav a:hover {
+  color: #e95c78;
+}
+.raw-section .current-sub a {
+  color: #e95c78;
+}
+.raw-section .current-sub a:hover {
+  color: #e95c78;
+}
+.raw-section .keyResearch {
+  border-top: 3px solid #e95c78;
+}
+.raw-section .sidebarBlock {
+  border-top: 2px solid #e95c78;
+}
+.sidebarBlock {
+  border-top: 2px solid #7a7a7a;
+  margin-bottom: 40px;
+}
+.sidebarBlock h3 {
+  margin: 0;
+  color: #333;
+  font-size: 20px;
+}
+.homeBlock h2 {
+  font-size: 28px;
+  line-height: 32px;
+}
+.homeBlock h2 a {
+  color: #333;
+}
+.sidebarBlock ul,
+.homeBlock ul {
+  margin-left: 0;
+}
+.sidebarBlock ul li,
+.homeBlock ul li {
+  list-style: none;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.sidebarBlock .articleMeta {
+  border: none;
+}
+.sidebarBlock .authorProfile h5 {
+  margin: 0;
+  line-height: 14px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.sidebarBlock .authorProfile p {
+  font-size: 14px;
+  line-height: 18px;
+}
+.footer {
+  margin-top: 50px;
+}
+.footer-nav ul li a {
+  font-size: 16px;
+}
