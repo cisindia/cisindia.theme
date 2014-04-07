@@ -38,6 +38,7 @@ setup(name='cisindia.theme',
           'collective.portlet.collectionmultiview',
           'fourdigits.portlet.twitter',
           'cisindia.multiviews',
+          'collective.contentleadimage',
           # -*- Extra requirements: -*-
       ],
       extras_require={
