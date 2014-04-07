@@ -9,8 +9,6 @@
 
     <rules css:if-content="#visual-portal-wrapper">
 
-        <theme href="index.html" css:if-content="body.section-home"/>
-
         <!--HEAD SECTION-->
         <!-- Drop styles in the head - these are added back by including them from Plone -->
         <drop theme="/html/head/title | /html/head/meta" />
@@ -25,13 +23,38 @@
         <copy attributes="href" css:theme="body > div:nth-child(1) > div > a" css:content="a#portal-logo"/>
 
         <!-- NAV -->
-        <copy attributes="href" css:theme="body > div.nav > div > ul > li.access-nav > a" css:content="#portaltab-accessibility > a"/>
-        <copy attributes="href" css:theme="body > div.nav > div > ul > li.a2k-nav > a" css:content="#portaltab-a2k > a"/>
-        <copy attributes="href" css:theme="body > div.nav > div > ul > li.open-nav > a" css:content="#portaltab-openness > a"/>
-        <copy attributes="href" css:theme="body > div.nav > div > ul > li.ig-nav > a" css:content="#portaltab-internet-governance > a"/>
-        <copy attributes="href" css:theme="body > div.nav > div > ul > li.telecom-nav > a" css:content="#portaltab-telecom > a"/>
-        <copy attributes="href" css:theme="body > div.nav > div > ul > li.natives-nav > a" css:content="#portaltab-digital-natives > a"/>
-        <copy attributes="href" css:theme="body > div.nav > div > ul > li.raw-nav > a" css:content="#portaltab-raw > a"/>
+        <replace css:theme-children=".nav">
+            <div class="container">
+                <ul class="row-fluid">
+                    <xsl:for-each css:select="#portal-globalnav">
+                        <xsl:copy-of css:select="li"/>
+                    </xsl:for-each>
+
+                </ul>
+
+            </div>
+
+
+
+        </replace>
+    
+
+
+
+        <!-- SUBNAV -->
+  <rules css:if-theme=".sub-nav">
+            <replace css:theme-children=".sub-nav">
+                <div class="container">
+                <ul class="row-fluid">
+                    <xsl:for-each css:select=".portletNavigationTree .portletItem .navTree">
+                        <xsl:copy-of css:select="li"/>
+                    </xsl:for-each>
+                </ul>
+                </div>
+
+
+            </replace>
+        </rules>
 
 
         <!-- FOOTER -->
@@ -51,6 +74,9 @@
         <!-- SITE MAP -->
         
         <replace theme-children="/html/body/div[4]/div[1]/div/ul" css:content-children="#portal-siteactions"/>
+
+        <rules css:if-content="body.section-home">
+        <theme href="index.html"/>
 
 
         <!--PORTLETS -->
@@ -176,6 +202,19 @@
 
                 </xsl:for-each>
             </replace>
+        </rules>
+        <rules css:if-not-content="body.section-home">
+            <theme href="html/section.html"/>
+            <replace css:theme=".pageHeader > h1:nth-child(1)" css:content="#parent-fieldname-title"/>
+            <replace css:theme-children=".sectionIntro" css:content-children="#parent-fieldname-description"/>
+            <replace css:theme-children=".keyResearch" css:content-children="#content-core"/>
+        </rules>
+
+        <rules css:if-content="">
+
+        </rules>
+        
+      
 
 
 

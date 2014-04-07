@@ -112,6 +112,7 @@
 }
 .keyResearch {
   margin-top: 30px;
+  font-size: 16px;
 }
 .keyResearch h2 {
   font-size: 32px;
@@ -436,3 +437,12 @@ ul.articleMeta li.location {
 .footer-nav ul li a {
   font-size: 16px;
 }
+ul li a.navTreeCurrentItem {
+    color: #56ba5d;
+
+}
+li.selected a {
+    border-bottom: 5px solid #56ba5d;
+    color: #56ba5d;
+}
+
