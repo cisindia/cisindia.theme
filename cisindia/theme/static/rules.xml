@@ -251,11 +251,13 @@
                 </replace>
             </rules>
             <rules css:if-not-content=".featured-wrapper">
-                 <drop css:theme=".sidebar .featured"/>
-                 <replace css:theme-children="div.sidebarBlock:nth-child(2)">
-                    <h3><xsl:copy-of css:select='#portal-column-two > div:nth-child(1) .portletHeader span:nth-child(2)'/></h3>
+                <drop css:theme-children=".sidebar"/>
+                <after css:theme-children=".sidebar">
+                    <xsl:for-each css:select="#portal-column-two > div.portletWrapper">
+                        <div class="sidebarBlock">
+                    <h3><xsl:copy-of css:select='.portletHeader *:nth-child(2)'/></h3>
                     <ul>
-                        <xsl:for-each css:select="#portal-column-two > div:nth-child(1) dd.portletItem a">
+                        <xsl:for-each css:select="dd.portletItem a">
                             <li>
                                 <xsl:copy>
                                     <xsl:copy-of select="@*"/>
@@ -266,29 +268,47 @@
                         </xsl:for-each>
                     </ul>
 
-                </replace>
-                <replace css:theme-children="div.sidebarBlock:nth-child(3)">
-                    <h3><xsl:copy-of css:select='#portal-column-two > div:nth-child(2) .portletHeader span:nth-child(2)'/></h3>
-                    <ul>
-                        <xsl:for-each css:select="#portal-column-two > div:nth-child(2) dd.portletItem a">
-                            <li>
-                                <xsl:copy>
-                                    <xsl:copy-of select="@*"/>
-                                    <xsl:copy-of select="text()"/>
-                                </xsl:copy>
-                                <p class="date"><xsl:value-of css:select="span"/> </p>
-                                </li>
-                        </xsl:for-each>
-                    </ul>
+                        </div>
 
-                </replace>
+                    </xsl:for-each>
 
-
+                </after>
+               
             </rules>
 
             </rules>
             <rules css:if-not-content="#portal-column-two">
                 <drop css:theme="div.sidebar"/>
+            </rules>
+
+            <rules css:if-content=".template-summary_view">
+                <replace css:theme-children=".content">
+                    <xsl:for-each css:select="#content-core div.tileItem">
+                        <div class="articleItem">
+                            <h2><xsl:copy-of css:select=".tileHeadline a"/></h2>
+                            <p class="author">by <xsl:copy-of css:select=".documentByLine span a"/></p>
+                            <ul class="articleMeta row-fluid">
+                        <li class="date span6">November 26, 2012</li>
+                        <li class="tags span6">
+                            <p><a href="#">Digital activism</a>, <a href="">Digital natives</a></p>
+                        </li>
+                    </ul>
+                    <p><xsl:value-of css:select=".description"/></p>
+                    <xsl:element name="a">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="p[@class='tileFooter']/a/@href"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="class">
+                            readmore
+                        </xsl:attribute>
+
+                    Read more →
+                    </xsl:element>
+
+                        </div>
+                    </xsl:for-each>
+                </replace>
+
             </rules>
 
         </rules>
