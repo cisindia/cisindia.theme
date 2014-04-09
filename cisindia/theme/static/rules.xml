@@ -59,21 +59,22 @@
 
         <!-- FOOTER -->
 
-        <replace theme-children="/html/body/div[4]/div[2]/div[1]/div[3]/h4" css:content-children=".portletTwitterPortlet > dt:nth-child(1) > a:nth-child(2)"/>
-        <after theme="/html/body/div[4]/div[2]/div[1]/div[3]/h4">
+        <replace css:theme-children=".footer .container .row-fluid > div.footer-block:nth-child(3) h4" css:content-children=".portletTwitterPortlet > dt:nth-child(1) > a:nth-child(2)"/>
+        <after css:theme=".footer .container .row-fluid > div.footer-block:nth-child(3) h4">
             <xsl:for-each css:select=".portletTwitterPortlet dd">
                 <div><xsl:copy-of select="*"/></div>
 
             </xsl:for-each>
         </after>
-        <replace theme="/html/body/div[4]/div[2]/div[1]/div[2]/p[1]" css:content-children=".portlet-static-support-us > dd:nth-child(2)"/>
-        <replace theme="/html/body/div[4]/div[2]/div[1]/div[2]/p[2]" css:content-children=".portlet-static-request-for-collaboration > dd:nth-child(2)"/>
-        <after theme="/html/body/div[4]/div[2]/div[1]/div[1]/h4" css:content-children=".portlet-static-funded-by > dd:nth-child(2)"/>
+        <replace css:theme=".footer .container .row-fluid > div.footer-block:nth-child(2)  p:nth-of-type(1)" css:content-children=".portlet-static-support-us > dd:nth-child(2)"/>
+        <replace css:theme=".footer .container .row-fluid > div.footer-block:nth-child(2)  p:nth-of-type(2)" css:content-children=".portlet-static-request-for-collaboration > dd:nth-child(2)"/>
+        <after css:theme=".footer .container .row-fluid > div.footer-block:nth-child(1) h4 " css:content-children=".portlet-static-funded-by > dd:nth-child(2)"/>
 
 
         <!-- SITE MAP -->
         
-        <replace theme-children="/html/body/div[4]/div[1]/div/ul" css:content-children="#portal-siteactions"/>
+        <replace css:theme-children=".footer .footer-nav .container .row-fluid" css:content-children="#portal-siteactions"/>
+
 
         <rules css:if-content="body.section-home">
         <theme href="index.html"/>
@@ -204,16 +205,96 @@
             </replace>
         </rules>
         <rules css:if-not-content="body.section-home">
+        <theme href="html/section-blog.html" css:if-content=".template-summary_view"/>
             <theme href="html/section.html"/>
             <replace css:theme=".pageHeader > h1:nth-child(1)" css:content="#parent-fieldname-title"/>
             <replace css:theme-children=".sectionIntro" css:content-children="#parent-fieldname-description"/>
             <replace css:theme-children=".keyResearch" css:content-children="#content-core"/>
+
+            <rules css:if-content="#portal-column-two">
+            <rules css:if-content=".featured-wrapper">
+
+                <strip css:content='.featured-content h3'/>
+                <replace css:theme=".featured h2 a" css:content=".featured-content a:first-child"/>
+                <replace css:theme=".featured p" css:content="p.featured-description"/>
+                <copy attributes="href" css:theme=".featured a.readmore" css:content=".featured-content #featured-link a"/>
+
+                <replace css:theme-children="div.sidebarBlock:nth-child(2)">
+                    <h3><xsl:copy-of css:select='#portal-column-two > div:nth-child(2) .portletHeader span:nth-child(2)'/></h3>
+                    <ul>
+                        <xsl:for-each css:select="#portal-column-two > div:nth-child(2) dd.portletItem a">
+                            <li>
+                                <xsl:copy>
+                                    <xsl:copy-of select="@*"/>
+                                    <xsl:copy-of select="text()"/>
+                                </xsl:copy>
+                                <p class="date"><xsl:value-of css:select="span"/> </p>
+                                </li>
+                        </xsl:for-each>
+                    </ul>
+
+                </replace>
+                <replace css:theme-children="div.sidebarBlock:nth-child(3)">
+                    <h3><xsl:copy-of css:select='#portal-column-two > div:nth-child(3) .portletHeader span:nth-child(2)'/></h3>
+                    <ul>
+                        <xsl:for-each css:select="#portal-column-two > div:nth-child(3) dd.portletItem a">
+                            <li>
+                                <xsl:copy>
+                                    <xsl:copy-of select="@*"/>
+                                    <xsl:copy-of select="text()"/>
+                                </xsl:copy>
+                                <p class="date"><xsl:value-of css:select="span"/> </p>
+                                </li>
+                        </xsl:for-each>
+                    </ul>
+
+                </replace>
+            </rules>
+            <rules css:if-not-content=".featured-wrapper">
+                 <drop css:theme=".sidebar .featured"/>
+                 <replace css:theme-children="div.sidebarBlock:nth-child(2)">
+                    <h3><xsl:copy-of css:select='#portal-column-two > div:nth-child(1) .portletHeader span:nth-child(2)'/></h3>
+                    <ul>
+                        <xsl:for-each css:select="#portal-column-two > div:nth-child(1) dd.portletItem a">
+                            <li>
+                                <xsl:copy>
+                                    <xsl:copy-of select="@*"/>
+                                    <xsl:copy-of select="text()"/>
+                                </xsl:copy>
+                                <p class="date"><xsl:value-of css:select="span"/> </p>
+                                </li>
+                        </xsl:for-each>
+                    </ul>
+
+                </replace>
+                <replace css:theme-children="div.sidebarBlock:nth-child(3)">
+                    <h3><xsl:copy-of css:select='#portal-column-two > div:nth-child(2) .portletHeader span:nth-child(2)'/></h3>
+                    <ul>
+                        <xsl:for-each css:select="#portal-column-two > div:nth-child(2) dd.portletItem a">
+                            <li>
+                                <xsl:copy>
+                                    <xsl:copy-of select="@*"/>
+                                    <xsl:copy-of select="text()"/>
+                                </xsl:copy>
+                                <p class="date"><xsl:value-of css:select="span"/> </p>
+                                </li>
+                        </xsl:for-each>
+                    </ul>
+
+                </replace>
+
+
+            </rules>
+
+            </rules>
+            <rules css:if-not-content="#portal-column-two">
+                <drop css:theme="div.sidebar"/>
+            </rules>
+
         </rules>
 
-        <rules css:if-content="">
 
-        </rules>
-        
+                
       
 
 
