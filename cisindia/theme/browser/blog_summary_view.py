@@ -3,6 +3,7 @@ from Products.CMFCore.interfaces import IContentish
 
 grok.templatedir('templates')
 
+
 class blog_summary_view(grok.View):
     grok.context(IContentish)
     grok.name('blog_summary_view')

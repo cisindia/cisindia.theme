@@ -206,7 +206,8 @@
         </rules>
         <rules css:if-not-content="body.section-home">
         <theme href="html/section-blog.html" css:if-content=".template-summary_view"/>
-            <theme href="html/section.html"/>
+        <theme href="html/event.html" css:if-content=".template-event_view"/>
+        <theme href="html/section.html"/>
             <replace css:theme=".pageHeader > h1:nth-child(1)" css:content="#parent-fieldname-title"/>
             <replace css:theme-children=".sectionIntro" css:content-children="#parent-fieldname-description"/>
             <replace css:theme-children=".keyResearch" css:content-children="#content-core"/>
@@ -281,16 +282,16 @@
                 <drop css:theme="div.sidebar"/>
             </rules>
 
-            <rules css:if-content=".template-summary_view">
+            <rules css:if-content=".template-blog_summary_view">
                 <replace css:theme-children=".content">
                     <xsl:for-each css:select="#content-core div.tileItem">
                         <div class="articleItem">
                             <h2><xsl:copy-of css:select=".tileHeadline a"/></h2>
                             <p class="author">by <xsl:copy-of css:select=".documentByLine span a"/></p>
                             <ul class="articleMeta row-fluid">
-                        <li class="date span6">November 26, 2012</li>
+                                <li class="date span6"><xsl:value-of css:select='.date'/></li>
                         <li class="tags span6">
-                            <p><a href="#">Digital activism</a>, <a href="">Digital natives</a></p>
+                            <p><xsl:copy-of css:select='.categories > *'/></p>
                         </li>
                     </ul>
                     <p><xsl:value-of css:select=".description"/></p>
@@ -308,10 +309,112 @@
                         </div>
                     </xsl:for-each>
                 </replace>
+             
+            </rules>
+
+            <rules css:if-content=".template-blog_summary_view">
+                <replace css:theme-children=".content">
+                    <xsl:for-each css:select="#content-core div.tileItem">
+                        <div class="articleItem">
+                            <h2><xsl:copy-of css:select=".tileHeadline a"/></h2>
+                            <p class="author">by <xsl:copy-of css:select=".documentByLine span a"/></p>
+                            <ul class="articleMeta row-fluid">
+                                <li class="date span6"><xsl:value-of css:select='.date'/></li>
+                        <li class="tags span6">
+                            <p><xsl:copy-of css:select='.categories > *'/></p>
+                        </li>
+                    </ul>
+                    <p><xsl:value-of css:select=".description"/></p>
+                    <xsl:element name="a">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="p[@class='tileFooter']/a/@href"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="class">
+                            readmore
+                        </xsl:attribute>
+
+                    Read more →
+                    </xsl:element>
+
+                        </div>
+                    </xsl:for-each>
+                </replace>
+             
+            </rules>
+
+            <rules css:if-content=".template-event_summary_view">
+                <replace css:theme-children=".content">
+                    <xsl:for-each css:select="#content-core div.tileItem">
+                        <div class="articleItem">
+                            <h2><xsl:copy-of css:select=".tileHeadline a"/></h2>
+                            <p class="author">by <xsl:copy-of css:select=".documentByLine span a"/> - <xsl:copy-of css:select='.documentByLine span.location' /></p>
+                            <ul class="articleMeta row-fluid">
+                                <li class="date span6"><xsl:value-of css:select='.date'/></li>
+                                            </ul>
+                    <p><xsl:value-of css:select=".description"/></p>
+                    <xsl:element name="a">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="p[@class='tileFooter']/a/@href"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="class">
+                            readmore
+                        </xsl:attribute>
+
+                    Read more →
+                    </xsl:element>
+
+                        </div>
+                    </xsl:for-each>
+                </replace>
+             
+            </rules>
+
+            <rules css:content=".template-event_view">
+                <replace css:theme='.author a' css:content='.documentByLine .documentAuthor a' />
+                <replace css:theme-children='p.articleIntro' css:content-children='div#parent-fieldname-description'/>
+                <drop css:content='.eventDetails'/>
+                <replace css:theme-children='.content-core' css:content-children='#content-core'/>
+
+                <rules css:if-content="#portal-column-two">
+                    <before css:theme-children=".sidebar">
+                        <div class='sidebarBlock'>
+                            <xsl:copy-of css:select=".eventDetails"/>
+                        </div>
+                    </before>
+                </rules>
+                <rules css:if-not-content="#portal-column-two">
+                    <after css:theme=".content">
+                        <div class='sidebar span4'>
+                        <div class='sidebarBlock'>
+                            <xsl:copy-of css:select=".eventDetails"/>
+                        </div>
+                    </div>
+                    </after>
+                </rules>
+
+                <replace css:theme-children=".articleTools.row-fluid" css:content-children="#viewlet-social-like"/>
+
 
             </rules>
 
-        </rules>
+
+               <after css:theme-children=".content" css:if-content=".listingBar">
+                    <div class="pagination">
+                        <ul>
+                            <li><xsl:copy-of css:select='.listingBar .previous'/></li>
+                            <xsl:for-each css:select=".listingBar">
+                                <li>
+                                    <xsl:copy-of css:select='.listingBar > a, span.current'/>
+                            </li>
+
+                        </xsl:for-each>
+                            <li><xsl:copy-of css:select='.listingBar .next'/></li>
+                    </ul>
+
+                    </div>
+                </after>
+
+            </rules>
 
 
                 

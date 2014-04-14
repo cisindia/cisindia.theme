@@ -39,6 +39,7 @@ setup(name='cisindia.theme',
           'fourdigits.portlet.twitter',
           'cisindia.multiviews',
           'collective.contentleadimage',
+          'sc.social.like',
           # -*- Extra requirements: -*-
       ],
       extras_require={
