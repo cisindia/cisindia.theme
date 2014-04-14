@@ -445,4 +445,12 @@ li.selected a {
     border-bottom: 5px solid #56ba5d;
     color: #56ba5d;
 }
+.articleTools > div {
+
+    display: inline-block;
+
+}
+.sociallike-network-facebook{
+    margin-right: 30px;
+}
 
