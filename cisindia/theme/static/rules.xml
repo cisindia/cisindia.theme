@@ -393,6 +393,10 @@
                 </rules>
 
                 <replace css:theme-children=".articleTools.row-fluid" css:content-children="#viewlet-social-like"/>
+                <prepend theme="/html/head">
+                      <script src="//connect.facebook.net/en_GB/all.js#xfbml=1"></script>
+                      <script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+                </prepend>
 
 
             </rules>
