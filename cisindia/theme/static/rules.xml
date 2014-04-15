@@ -312,36 +312,6 @@
              
             </rules>
 
-            <rules css:if-content=".template-blog_summary_view">
-                <replace css:theme-children=".content">
-                    <xsl:for-each css:select="#content-core div.tileItem">
-                        <div class="articleItem">
-                            <h2><xsl:copy-of css:select=".tileHeadline a"/></h2>
-                            <p class="author">by <xsl:copy-of css:select=".documentByLine span a"/></p>
-                            <ul class="articleMeta row-fluid">
-                                <li class="date span6"><xsl:value-of css:select='.date'/></li>
-                        <li class="tags span6">
-                            <p><xsl:copy-of css:select='.categories > *'/></p>
-                        </li>
-                    </ul>
-                    <p><xsl:value-of css:select=".description"/></p>
-                    <xsl:element name="a">
-                        <xsl:attribute name="href">
-                            <xsl:value-of select="p[@class='tileFooter']/a/@href"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="class">
-                            readmore
-                        </xsl:attribute>
-
-                    Read more →
-                    </xsl:element>
-
-                        </div>
-                    </xsl:for-each>
-                </replace>
-             
-            </rules>
-
             <rules css:if-content=".template-event_summary_view">
                 <replace css:theme-children=".content">
                     <xsl:for-each css:select="#content-core div.tileItem">
@@ -369,7 +339,7 @@
              
             </rules>
 
-            <rules css:content=".template-event_view">
+            <rules css:if-content=".template-event_view">
                 <replace css:theme='.author a' css:content='.documentByLine .documentAuthor a' />
                 <replace css:theme-children='p.articleIntro' css:content-children='div#parent-fieldname-description'/>
                 <drop css:content='.eventDetails'/>
