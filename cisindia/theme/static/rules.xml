@@ -17,6 +17,14 @@
         <merge theme="/html/body" content="/html/body" attributes="class"/>
         <merge theme="/html/body" content="/html/body" attributes="dir"/>
         <append css:theme="body" css:content="#plone-analytics"/>
+
+
+        <!-- SEARCH -->
+
+        <replace css:theme='body > div:nth-child(1) > div > form' css:content='#searchGadget_form'/>
+        <replace css:content-children='#searchGadget_form'>
+            <input name="SearchableText"  title="Search Site" placeholder="Search Site" accesskey="4" class="searchField span4" id="searchGadget" type="text"/>
+        </replace>
         
 
         <!--LOGO -->
