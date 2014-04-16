@@ -216,7 +216,7 @@
             <rules css:if-content=".featured-wrapper">
 
                 <strip css:content='.featured-content h3'/>
-                <replace css:theme=".featured h2 a" css:content=".featured-content a:first-child"/>
+                <replace css:theme=".featured h2 a" css:content=".featured-content > a:first-child"/>
                 <replace css:theme=".featured p" css:content="p.featured-description"/>
                 <copy attributes="href" css:theme=".featured a.readmore" css:content=".featured-content #featured-link a"/>
 
