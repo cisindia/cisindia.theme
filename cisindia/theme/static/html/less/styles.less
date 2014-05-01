@@ -124,6 +124,7 @@
 
 .keyResearch{	
 	margin-top: 30px;
+    font-size: 16px;
 	h2{
 		font-size: 32px;
 		line-height: 32px;
@@ -234,8 +235,12 @@ ul.articleMeta{
 .articleTools{
 	border-top: 1px solid #ebebeb;
 	border-bottom: 1px solid #ebebeb;
-	overflow: hidden;
 	padding: 15px 0 10px;
+
+    & > div {
+
+        display: inline-block;
+    }
 }
 
 
@@ -264,7 +269,7 @@ ul.articleMeta{
 }
 
 .access-block{border-top: 3px solid @access;}
-.access-section{
+.section-accessibility {
 	.nav{border-bottom: 1px solid @access;}
 	.access-nav{
 		a{
@@ -282,10 +287,19 @@ ul.articleMeta{
 	.sidebarBlock{
 		border-top: 2px solid @access;
 	}
+    ul li a.navTreeCurrentItem {
+        color: @access;
+
+    }
+    li.selected a {
+        border-bottom: 5px solid @access;
+        color: @access;
+    }
+
 }
 
 .a2k-block{border-top: 3px solid @a2k;}
-.a2k-section{
+.section-a2k{
 	.nav{border-bottom: 1px solid @a2k;}
 	.a2k-nav{
 		a{
@@ -303,10 +317,19 @@ ul.articleMeta{
 	.sidebarBlock{
 		border-top: 2px solid @a2k;
 	}
+    ul li a.navTreeCurrentItem {
+        color: @a2k;
+
+    }
+    li.selected a {
+        border-bottom: 5px solid @a2k;
+        color: @a2k;
+    }
+
 }
 
 .ig-block{border-top: 3px solid @ig;}
-.ig-section{
+.section-internet-governance{
 	.nav{border-bottom: 1px solid @ig;}
 	.ig-nav{
 		a{
@@ -324,10 +347,19 @@ ul.articleMeta{
 	.sidebarBlock{
 		border-top: 2px solid @ig;
 	}
+    ul li a.navTreeCurrentItem {
+        color: @ig;
+
+    }
+    li.selected a {
+        border-bottom: 5px solid @ig;
+        color: @ig;
+    }
+
 }
 
 .open-block{border-top: 3px solid @open;}
-.open-section{
+.section-openness{
 	.nav{border-bottom: 1px solid @open;}
 	.open-nav{
 		a{
@@ -345,10 +377,19 @@ ul.articleMeta{
 	.sidebarBlock{
 		border-top: 2px solid @open;
 	}
+    ul li a.navTreeCurrentItem {
+        color: @open;
+
+    }
+    li.selected a {
+        border-bottom: 5px solid @open;
+        color: @open;
+    }
+
 }
 
 .telecom-block{border-top: 3px solid @telecom;}
-.telecom-section{
+.section-telecom{
 	.nav{border-bottom: 1px solid @telecom;}
 	.telecom-nav{
 		a{
@@ -366,10 +407,18 @@ ul.articleMeta{
 	.sidebarBlock{
 		border-top: 2px solid @telecom;
 	}
+    ul li a.navTreeCurrentItem {
+        color: @telecom;
+
+    }
+    li.selected a {
+        border-bottom: 5px solid @telecom;
+        color: @telecom;
+    }
 }
 
 .natives-block{border-top: 3px solid @natives;}
-.natives-section{
+.section-digital-natives{
 	.nav{border-bottom: 1px solid @natives;}
 	.natives-nav{
 		a{
@@ -387,10 +436,19 @@ ul.articleMeta{
 	.sidebarBlock{
 		border-top: 2px solid @natives;
 	}
+    ul li a.navTreeCurrentItem {
+        color: @natives;
+
+    }
+    li.selected a {
+        border-bottom: 5px solid @natives;
+        color: @natives;
+    }
+
 }
 
 .raw-block{border-top: 3px solid @raw;}
-.raw-section{
+.section-raw{
 	.nav{border-bottom: 1px solid @raw;}
 	.raw-nav{
 		a{
@@ -408,6 +466,15 @@ ul.articleMeta{
 	.sidebarBlock{
 		border-top: 2px solid @raw;
 	}
+    ul li a.navTreeCurrentItem {
+        color: @raw;
+
+    }
+    li.selected a {
+        border-bottom: 5px solid @raw;
+        color: @raw;
+    }
+
 }
 
 .sidebarBlock{
@@ -472,3 +539,10 @@ ul.articleMeta{
 		}
 	}
 }
+
+
+
+.sociallike-network-facebook{
+    margin-right: 30px;
+}
+
