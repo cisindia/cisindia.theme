@@ -490,3 +490,28 @@ ul.articleMeta li.location {
 .sociallike-network-facebook {
   margin-right: 30px;
 }
+
+#category {
+ float: right;
+}
+
+.documentActions li {
+ list-style: none;
+ font-size: 14px;
+ display: inline-block;
+ background-color: #EBEBEB;
+ padding: 3px;
+}
+
+.reply {
+margin-top: 50px;
+}
+
+.commentImage {
+float: left;
+margin-right: 15px;
+}
+
+.discussion {
+margin-top: 10px;
+}

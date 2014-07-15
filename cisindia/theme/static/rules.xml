@@ -83,6 +83,10 @@
         
         <replace css:theme-children=".footer .footer-nav .container .row-fluid" css:content-children="#portal-siteactions"/>
 
+	<!-- Remove manage portlets -->
+
+	<drop css:content=".managePortletsFallback"/>
+
 
         <rules css:if-content="body.section-home">
         <theme href="index.html"/>
@@ -218,7 +222,22 @@
         <theme href="html/section.html"/>
             <replace css:theme=".pageHeader > h1:nth-child(1)" css:content="#parent-fieldname-title"/>
             <replace css:theme-children=".sectionIntro" css:content-children="#parent-fieldname-description"/>
+            <replace css:theme-children=".keyResearch" css:content-children="#parent-fieldname-text" css:if-not-content="#content-core"/>
             <replace css:theme-children=".keyResearch" css:content-children="#content-core"/>
+	    <drop css:content=".hiddenStructure"/>
+	    <after css:theme=".keyResearch" css:content="#viewlet-below-content-body" css:if-content="#content-core"/>
+	    <after css:theme=".keyResearch" css:content="#viewlet-below-content" css:if-content="#content-core"/>
+
+	    <!-- There are rules specific for plone scrawl such as main content and viewlet below -->
+	    <rules css:if-not-content="#content-core">
+		
+		    <after css:theme=".keyResearch" css:content=".documentActions" />
+		    <after css:theme=".keyResearch" css:content="#socialbuttons" />
+		    <after css:theme=".keyResearch" css:content="#viewlet-below-content" />
+
+	    
+            </rules>
+
 
             <rules css:if-content="#portal-column-two">
             <rules css:if-content=".featured-wrapper">
