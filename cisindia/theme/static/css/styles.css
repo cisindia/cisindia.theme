@@ -493,6 +493,7 @@ ul.articleMeta li.location {
 
 #category {
  float: right;
+ margin-bottom: 15px;
 }
 
 .documentActions li {
@@ -512,6 +513,8 @@ float: left;
 margin-right: 15px;
 }
 
-.discussion {
-margin-top: 10px;
+.discussion, .comment {
+clear: both;
 }
+
+

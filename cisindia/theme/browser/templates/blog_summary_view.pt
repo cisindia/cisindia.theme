@@ -39,7 +39,10 @@
 
             <div metal:use-macro="context/standard_view/macros/document_byline"></div>
             <div>
-                <span class='date' tal:content="python: obj.effective_date.strftime('%B %d, %Y')"/>
+		 <tal:check define="date obj/effective_date>| obj/creation_date" condition="date">
+			<span class='date' tal:content="python: date.strftime('%B %d, %Y')"/>
+		 </tal:check>
+		
                     <tal:tags repeat="tag  item/Subject">
 
                 <div class="categories">
