@@ -26,4 +26,6 @@
 
     <!-- -*- extra stuff goes here -*- -->
 
+    <include package=".portlet"/>
+
 </configure>
