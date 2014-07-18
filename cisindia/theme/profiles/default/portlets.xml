@@ -6,4 +6,12 @@
 	   title="Blog Meta"
 	   description=""/>
 
+   <assignment name="blog-meta" 
+	   category="content_type" 
+	   key="Blog Entry"
+	   manager="plone.rightcolumn"
+	   type="cisindia.theme.portlet.BlogMeta" 
+	   visible="True"
+	   />
+
 </portlets>  

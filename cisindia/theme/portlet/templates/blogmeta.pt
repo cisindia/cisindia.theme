@@ -1,18 +1,17 @@
-<dl class="portlet portletBlogMeta"
+<div class="portlet portletBlogMeta sidebarBlock"
     i18n:domain="cisindia.theme">
 
-    <dt class="portletHeader">
-        <span class="portletTopLeft"></span>
-        Blog Meta
-        <span class="portletTopRight"></span>
-    </dt>
+	<h3> Meta </h3>
 
-    <dd class="portletItem">
-    </dd>
+    <ul class="articleMeta blog-info">
+	    <li class="date" tal:content="python: context.effective_date.strftime('%d %B, %Y')"></li>
+	    <li class="tags">
+	    <tal:tags repeat="tag  context/Subject">
+	    <a tal:content='tag' tal:attributes='href string:${context/portal_url}/@@search?Subject%3Alist=${tag}'></a><span tal:condition="not:repeat/tag/end">, </span>
+	    </tal:tags>
+	    </li>
+    </ul>
 
-    <dd class="portletFooter">
-        <span class="portletBottomLeft"></span>
-        <span class="portletBottomRight"></span>
-    </dd>
 
-</dl>
+
+</div>
