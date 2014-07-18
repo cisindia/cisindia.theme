@@ -1,17 +1,20 @@
 <?xml version="1.0"?>                                                           
 <portlets>  
 
+	<!-- -*- extra stuff goes here -*- -->
+
 	 <portlet 
 	   addview="cisindia.theme.portlet.BlogMeta"
 	   title="Blog Meta"
 	   description=""/>
 
-   <assignment name="blog-meta" 
-	   category="content_type" 
-	   key="Blog Entry"
-	   manager="plone.rightcolumn"
-	   type="cisindia.theme.portlet.BlogMeta" 
-	   visible="True"
-	   />
+	  <assignment name="blog-meta" 
+	  category="content_type" 
+	  key="Blog Entry"
+	  manager="plone.rightcolumn"
+	  type="cisindia.theme.portlet.BlogMeta" 
+	  visible="True"
+	  />
+
 
 </portlets>  
