@@ -5,6 +5,13 @@
                                                                                 
     <include package="plone.app.portlets" file="permissions.zcml"/>             
     <!-- -*- extra stuff goes here -*- -->      
+    <plone:portlet
+        name="cisindia.theme.portlet.AuthorInfo"
+        interface=".authorinfo.IAuthorInfo"
+        assignment=".authorinfo.Assignment"
+        renderer=".authorinfo.Renderer"
+        addview=".authorinfo.AddForm"
+        />
 
     <plone:portlet
         name="cisindia.theme.portlet.BlogMeta"

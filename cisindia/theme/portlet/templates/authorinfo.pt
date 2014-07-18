@@ -1,0 +1,18 @@
+<dl class="portlet portletAuthorInfo"
+    i18n:domain="cisindia.theme">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        Author Info
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem">
+    </dd>
+
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+
+</dl>
