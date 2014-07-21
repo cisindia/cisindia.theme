@@ -40,6 +40,7 @@ setup(name='cisindia.theme',
           'cisindia.multiviews',
           'collective.contentleadimage',
           'sc.social.like',
+	  'plone.api',
           # -*- Extra requirements: -*-
       ],
       extras_require={

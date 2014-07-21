@@ -21,5 +21,14 @@
   visible="True"
   />
 
+  <assignment name="author-info" 
+  category="content_type" 
+  key="Blog Entry"
+  manager="plone.rightcolumn"
+  type="cisindia.theme.portlet.AuthorInfo" 
+  visible="True"
+  />
+
+
 
 </portlets>  

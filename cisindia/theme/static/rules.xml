@@ -282,7 +282,7 @@
                 <drop css:theme-children=".sidebar"/>
                 <after css:theme-children=".sidebar">
                     <xsl:for-each css:select="#portal-column-two > div.portletWrapper">
-				<xsl:if css:test=".portlet:not(.portletBlogMeta)">
+			    <xsl:if test="not(*[contains(@class, 'portletBlogMeta') or contains(@class, 'portletAuthorInfo')])">
                         <div class="sidebarBlock">
                     <h3><xsl:copy-of css:select='.portletHeader *:nth-child(2)'/></h3>
                     <ul>
@@ -311,6 +311,7 @@
                 <drop css:theme="div.sidebar"/>
             </rules>
 	    <before css:theme-children=".sidebar" css:content=".portletBlogMeta" />
+	    <before css:theme-children=".sidebar" css:content=".portletAuthorInfo" />
 
             <rules css:if-content=".template-blog_summary_view">
                 <replace css:theme-children=".content">

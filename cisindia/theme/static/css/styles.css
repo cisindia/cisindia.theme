@@ -506,6 +506,7 @@ ul.articleMeta li.location {
 
 .reply {
 margin-top: 50px;
+clear: both;
 }
 
 .commentImage {

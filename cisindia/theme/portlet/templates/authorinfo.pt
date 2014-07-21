@@ -1,18 +1,17 @@
-<dl class="portlet portletAuthorInfo"
+<div class="portlet portletAuthorInfo sidebarBlock"
     i18n:domain="cisindia.theme">
 
-    <dt class="portletHeader">
-        <span class="portletTopLeft"></span>
-        Author Info
-        <span class="portletTopRight"></span>
-    </dt>
+    <h3>Author</h3>
 
-    <dd class="portletItem">
-    </dd>
+    <div class="authorProfile row-fluid" >
+    <tal:info define="info view/data/getuserinfo">
+    <span class="span2" tal:content="structure info/image"></span>
+    <div class="span10">
+    <h5 tal:content="info/fullname"></h5>
+    <p tal:content="info/description"></p>
+    </div>
+    </tal:info>
+    </div>
 
-    <dd class="portletFooter">
-        <span class="portletBottomLeft"></span>
-        <span class="portletBottomRight"></span>
-    </dd>
 
-</dl>
+</div>

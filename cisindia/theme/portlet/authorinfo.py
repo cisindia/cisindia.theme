@@ -12,6 +12,8 @@ from Acquisition import aq_inner
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from cisindia.theme import MessageFactory as _
 
+from plone import api
+
 class IAuthorInfo(IPortletDataProvider):
     """
     Define your portlet schema here
@@ -32,6 +34,17 @@ class Renderer(base.Renderer):
     @property
     def available(self):
         return True
+    
+    def getuserinfo(self):
+	info = dict()
+	user = api.user.get(username=self.context.Creator())
+	info.update(fullname=user.getProperty('fullname'))
+	info.update(description=user.getProperty('description'))
+	info.update(image=user.getPersonalPortrait(user.id))
+
+	return info
+
+
 
 class AddForm(base.NullAddForm):
     form_fields = form.Fields(IAuthorInfo)
