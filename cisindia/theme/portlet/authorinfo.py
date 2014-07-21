@@ -38,6 +38,16 @@ class Renderer(base.Renderer):
     def getuserinfo(self):
 	info = dict()
 	user = api.user.get(username=self.context.Creator())
+
+	if not user:
+	    mtool = api.portal.get_tool('portal_membership')
+
+	    info.update(fullname=self.context.Creator())
+	    info.update(image=mtool.getPersonalPortrait())
+	    info.update(description=u'')
+
+	    return info
+
 	info.update(fullname=user.getProperty('fullname'))
 	info.update(description=user.getProperty('description'))
 	info.update(image=user.getPersonalPortrait(user.id))

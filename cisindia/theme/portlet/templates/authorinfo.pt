@@ -5,10 +5,10 @@
 
     <div class="authorProfile row-fluid" >
     <tal:info define="info view/data/getuserinfo">
-    <span class="span2" tal:content="structure info/image"></span>
+    <span class="span2" tal:content="structure info/image | nothing"></span>
     <div class="span10">
     <h5 tal:content="info/fullname"></h5>
-    <p tal:content="info/description"></p>
+    <p tal:content="info/description | nothing"></p>
     </div>
     </tal:info>
     </div>

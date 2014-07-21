@@ -220,6 +220,9 @@
         <theme href="html/section-blog.html" css:if-content=".template-summary_view"/>
         <theme href="html/event.html" css:if-content=".template-event_view"/>
         <theme href="html/section.html"/>
+
+	<drop css:theme=".sidebar" css:if-content=".template-sendto_form"/>
+
             <replace css:theme=".pageHeader > h1:nth-child(1)" css:content="#parent-fieldname-title"/>
             <replace css:theme-children=".sectionIntro" css:content-children="#parent-fieldname-description"/>
             <replace css:theme-children=".keyResearch" css:content-children="#parent-fieldname-text" css:if-not-content="#content-core"/>
