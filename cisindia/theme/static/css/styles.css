@@ -518,4 +518,13 @@ margin-right: 15px;
 clear: both;
 }
 
+.keyResearch table {
+visibility: visible;
+}
+
+.newsImageContainer {
+	margin-left: 15px;
+	float: right;
+}
+
 
