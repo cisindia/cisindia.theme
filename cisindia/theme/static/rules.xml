@@ -67,13 +67,8 @@
 
         <!-- FOOTER -->
 
-        <replace css:theme-children=".footer .container .row-fluid > div.footer-block:nth-child(3) h4" css:content-children=".portletTwitterPortlet > dt:nth-child(1) > a:nth-child(2)"/>
-        <after css:theme=".footer .container .row-fluid > div.footer-block:nth-child(3) h4">
-            <xsl:for-each css:select=".portletTwitterPortlet dd">
-                <div><xsl:copy-of select="*"/></div>
-
-            </xsl:for-each>
-        </after>
+	<replace css:theme-children=".footer .container .row-fluid > div.footer-block:nth-child(3) h4" css:content-children=".portlet-static-about-us > dt"/>
+	<after css:theme=".footer .container .row-fluid > div.footer-block:nth-child(3) h4" css:content-children=".portlet-static-about-us > dd:nth-child(2)"/>
         <replace css:theme=".footer .container .row-fluid > div.footer-block:nth-child(2)  p:nth-of-type(1)" css:content-children=".portlet-static-support-us > dd:nth-child(2)"/>
         <replace css:theme=".footer .container .row-fluid > div.footer-block:nth-child(2)  p:nth-of-type(2)" css:content-children=".portlet-static-request-for-collaboration > dd:nth-child(2)"/>
         <after css:theme=".footer .container .row-fluid > div.footer-block:nth-child(1) h4 " css:content-children=".portlet-static-funded-by > dd:nth-child(2)"/>
