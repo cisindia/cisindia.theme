@@ -176,6 +176,14 @@
 
         <!-- SIDE PORTLETS -->
         <!-- Featured articles -->
+	<before css:theme-children=".sidebar">
+	<div>
+		<div>
+			<xsl:copy-of css:select=".portlet-static-banner .portletItem > *"/>
+		</div>
+	</div>
+	</before>
+
         <replace theme-children="/html/body/div[3]/div/div[2]/div[1]/h3" content='//*[@id="portal-column-two"]/div[1]/dl/dt/span[2]/text()'/>
             <replace theme-children="/html/body/div[3]/div/div[2]/div[1]/ul">
                 <xsl:for-each select='//*[@id="portal-column-two"]/div[1]/dl/dd'>
